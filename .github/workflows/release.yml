@@ -6,5 +6,5 @@ on:
       - 'v*'
 jobs:
   release:
-    uses: mmStiver/actions/.github/workflows/release.yml@main
+    uses: mmstiver/actions/.github/workflows/release.yml@main
     secrets: inherit
