@@ -52,9 +52,9 @@ jobs:
       - name: build and push
         uses: azure/docker-login@v1
         with:
-          login-server: ' ${{ env.AZURE_REGISTRY_SERVER }}' # default: index.docker.io
-          username: '${{ secrets.AZURE_REGISTRY_SERVER_LOGIN }}'
-          password: '${{ secrets.AZURE_REGISTRY_SERVER_PASSWORD }}<password>'
+          login-server: ${{ env.AZURE_REGISTRY_SERVER }} # default: index.docker.io
+          username: ${{ secrets.AZURE_REGISTRY_SERVER_LOGIN }}
+          password: ${{ secrets.AZURE_REGISTRY_SERVER_PASSWORD }}
           
       - run: |
           docker build . -t ${{ env.AZURE_REGISTRY_SERVER }}/sample/${{ github.sha }}
