@@ -46,16 +46,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - uses: azure/docker-login@v1
-    - with:
-        login-server: ' ${{ env.AZURE_REGISTRY_SERVER }}' # default: index.docker.io
-        username: '${{ secrets.AZURE_REGISTRY_SERVER_LOGIN }}'
-        password: '${{ secrets.AZURE_REGISTRY_SERVER_PASSWORD }}<password>'
-    - run: |
-        docker build . -t ${{ env.AZURE_REGISTRY_SERVER }}/sample/${{ github.sha }}
-        docker push ${{ env.AZURE_REGISTRY_SERVER }}/sample/${{ github.sha }}
+      - name: build and push
+        uses: azure/docker-login@v1
+        with:
+          login-server: ' ${{ env.AZURE_REGISTRY_SERVER }}' # default: index.docker.io
+          username: '${{ secrets.AZURE_REGISTRY_SERVER_LOGIN }}'
+          password: '${{ secrets.AZURE_REGISTRY_SERVER_PASSWORD }}<password>'
+          
+      - run: |
+          docker build . -t ${{ env.AZURE_REGISTRY_SERVER }}/sample/${{ github.sha }}
+          docker push ${{ env.AZURE_REGISTRY_SERVER }}/sample/${{ github.sha }}
 
   deploy:
     permissions:
