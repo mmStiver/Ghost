@@ -1,6 +1,6 @@
 {
   "name": "ghost",
-  "version": "5.8.3",
+  "version": "5.9.1",
   "description": "The professional publishing platform",
   "author": "Ghost Foundation",
   "homepage": "https://ghost.org",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index",
-    "setup": "knex-migrator init && grunt symlink && yarn build || (exit 0)",
+    "setup": "knex-migrator init && grunt symlink || (exit 0)",
     "build": "yarn workspace ghost-admin run build",
     "test": "yarn test:unit",
     "test:single": "mocha --require=./test/utils/overrides.js --exit --trace-warnings --recursive --extension=test.js --timeout=60000",
@@ -83,6 +83,7 @@
     "@tryghost/limit-service": "1.2.3",
     "@tryghost/logging": "2.2.4",
     "@tryghost/magic-link": "0.0.0",
+    "@tryghost/mailgun-client": "0.0.0",
     "@tryghost/member-events": "0.0.0",
     "@tryghost/members-api": "0.0.0",
     "@tryghost/members-events-service": "0.0.0",
@@ -195,7 +196,7 @@
     "@types/common-tags": "1.8.1",
     "c8": "7.12.0",
     "cli-progress": "3.11.2",
-    "cssnano": "5.1.12",
+    "cssnano": "5.1.13",
     "eslint": "8.21.0",
     "grunt": "1.5.3",
     "grunt-contrib-symlink": "1.0.0",
