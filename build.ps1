@@ -1,6 +1,6 @@
 param(
 [string]$u,
-[string]$p,
+[string]$p
 )
 echo $u
 echo $p
