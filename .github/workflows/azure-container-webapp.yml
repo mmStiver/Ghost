@@ -67,7 +67,7 @@ jobs:
       - name: Build
         shell: pwsh
         run: |
-          .\build.ps1
+          .\build.ps1 ${{ secrets.AZURE_ADMIN_USER }} ${{ secrets.AZURE_ADMIN_PASSWORD }}
     
   deploy:
     permissions:
