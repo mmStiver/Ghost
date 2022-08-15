@@ -1,13 +1,7 @@
 name: Test Suite
 on:
   pull_request:
-  push:
-    branches:
-      - main
-      - 'v5.*'
-      - 3.x
-      - 2.x
-      - 'renovate/*'
+  
 env:
   FORCE_COLOR: 1
 concurrency:
