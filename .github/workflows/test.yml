@@ -1,4 +1,4 @@
-ame: Test Suite
+name: Test Suite
 on:
   pull_request:
   
