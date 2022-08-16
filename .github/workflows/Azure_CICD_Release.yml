@@ -31,7 +31,8 @@ jobs:
           password: ${{ secrets.AZURE_REGISTRY_SERVER_PASSWORD }}
           
       - run: |
-          docker build . -t ${{ env.AZURE_REGISTRY_SERVER }}/ghost
+          docker build . -t ${{ env.AZURE_REGISTRY_SERVER }}/ghost -t ${{ env.AZURE_REGISTRY_SERVER }}/ghost:${{ github.sha }}
+          docker push ${{ env.AZURE_REGISTRY_SERVER }}/ghost:${{ github.sha }}
           docker push ${{ env.AZURE_REGISTRY_SERVER }}/ghost
           
   build-and-deploy:
