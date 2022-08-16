@@ -30,8 +30,8 @@ jobs:
           password: ${{ secrets.AZURE_REGISTRY_SERVER_PASSWORD }}
           
       - run: |
-          docker build . -t ${{ env.AZURE_REGISTRY_SERVER }}/${{ github.ref_name }}/${{ github.sha }}
-          docker push ${{ env.AZURE_REGISTRY_SERVER }}/${{ github.ref_name }}/${{ github.sha }}
+          docker build . -t ${{ env.AZURE_REGISTRY_SERVER }}/${{ github.ref_name }}:${{ github.sha }}
+          docker push ${{ env.AZURE_REGISTRY_SERVER }}/${{ github.ref_name }}:${{ github.sha }}
   build-and-deploy:
     runs-on: ubuntu-latest
     
