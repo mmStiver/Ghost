@@ -95,6 +95,7 @@ WORKDIR $GHOST_INSTALL
 VOLUME $GHOST_CONTENT
 
 COPY docker-entrypoint.sh /usr/local/bin
+CHMOD +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["bash", "docker-entrypoint.sh"]
 
 EXPOSE 2368
