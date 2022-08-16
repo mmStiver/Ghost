@@ -25,9 +25,11 @@ const BETA_FEATURES = [
 ];
 
 const ALPHA_FEATURES = [
+    'auditLog',
     'urlCache',
     'beforeAfterCard',
-    'freeTrial'
+    'freeTrial',
+    'memberAttribution'
 ];
 
 module.exports.GA_KEYS = [...GA_FEATURES];
