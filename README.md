@@ -48,7 +48,7 @@ For most people this ends up being the best value option cause of [how much time
 If you prefer to run on your own infrastructure, we also offer official 1-off installs and managed support and maintenance plans via **[Ghost(Valet)](https://valet.ghost.org)** - which can save a substantial amount of developer time and resources.
 
 &nbsp;
-
+etgdfgdfgsfgdfg
 # Quickstart install
 
 If you want to run your own instance of Ghost, in most cases the best way is to use our **CLI tool**
