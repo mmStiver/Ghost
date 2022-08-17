@@ -34,15 +34,4 @@ jobs:
           docker build . -t ${{ secrets.AZURE_REGISTRY_LOGIN_SERVER }}/ghost -t ${{ secrets.AZURE_REGISTRY_LOGIN_SERVER }}/ghost:${{ github.sha }}
           docker push ${{ secrets.AZURE_REGISTRY_LOGIN_SERVER }}/ghost:${{ github.sha }}
           docker push ${{ secrets.AZURE_REGISTRY_LOGIN_SERVER }}/ghost
-          
-  build-and-deploy:
-    runs-on: ubuntu-latest
     
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Build
-        shell: pwsh
-        run: |
-          .\build.ps1 ${{ secrets.AZURE_ADMIN_USER }} ${{ secrets.AZURE_ADMIN_PASSWORD }}
